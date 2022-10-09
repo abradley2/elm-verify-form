@@ -1,0 +1,19 @@
+{
+    "type": "package",
+    "name": "abradley2/elm-verify-form",
+    "summary": "Type aliases and helpers for handling forms with stoeffel/elm-verify",
+    "license": "MIT",
+    "version": "1.0.0",
+    "exposed-modules": [
+        "Verify.Form"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
+    "dependencies": {
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "stoeffel/elm-verify": "5.0.0 <= v < 6.0.0"
+    },
+    "test-dependencies": {
+        "elm-explorations/test": "1.2.2 <= v < 2.0.0",
+        "MartinSStewart/elm-nonempty-string": "2.0.0 <= v < 3.0.0"
+    }
+}
