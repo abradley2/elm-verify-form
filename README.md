@@ -1,3 +1,5 @@
+# Verify.Form
+
 This module is based around a simple type alias over
 [elm-verify](https://package.elm-lang.org/packages/stoeffel/elm-verify/latest)'s
 [Validator](https://package.elm-lang.org/packages/stoeffel/elm-verify/latest/Verify#Validator)
@@ -81,7 +83,7 @@ if any occur.
     import Verify
     import Verify.Form exposing (FieldValidator)
 
-    nameValidator : FieldValidator String { form | nameErrors : Maybe (List String) } String
+    nameValidator : FieldValidator String { form | nameErrors : Maybe (String, List String) } String
     nameValidator =
         String.Verify.notBlank "Name cannot be empty"
             |> Verify.compose (String.Verify.minLength 2 "Name must be at least 2 characters long")

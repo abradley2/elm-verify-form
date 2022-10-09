@@ -187,7 +187,6 @@ liftFieldValidator fieldValidator getter form =
 type as a `FieldValidator`. The first argument tells the resulting `FormValidator` where on the form this `FieldValidator` will
 apply any errors to.
 -}
-liftValidator : (List error -> form -> form) -> Validator error input verified -> FieldValidator input form verified
+liftValidator : (( error, List error ) -> form -> form) -> Validator error input verified -> FieldValidator input form verified
 liftValidator fromErrors fn =
-    fn
-        >> Result.mapError (\( err, errors ) -> fromErrors (err :: errors))
+    fn >> Result.mapError fromErrors
